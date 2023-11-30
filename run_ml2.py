@@ -108,7 +108,7 @@ if __name__ == "__main__":
         data = fill_data_mean(data)
         X,y = normalize(data)
         X_train,y_train,X_val,y_val = split_datas(X,y,nb_predict=500)
-        model = SVR(kernel='rbf', C=1, gamma='auto')
+        model = SVR(degree=3,kernel='rbf', C=1, gamma='auto')
         train_and_eval_model(X_train,y_train,X_val,y_val,model,comp)
         
         
